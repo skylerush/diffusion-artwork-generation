@@ -1,100 +1,88 @@
 # Diffusion Models for Impressionist Artwork Generation
 
-**Sagie Zaoui · Shenkar College — Neural Networks, final project**
+Sagie Zaoui — Shenkar College, Neural Networks final project.
 
-**(1)** Implement & train a **DDPM from scratch** to understand the noise→denoise mechanism, then
-**(2)** **fine-tune Stable Diffusion v1.5** to generate **Impressionist** artwork — documenting the
-*full empirical process* (failed runs, analysis, hyper-parameter search, improvements).
+The project has two parts. The first implements a DDPM from scratch in PyTorch — U-Net noise
+predictor, cosine β-schedule, ε-prediction, EMA, and both the ancestral DDPM and DDIM samplers —
+and trains it at 64×64, to work through the noise→denoise mechanism directly rather than through a
+library. The second fine-tunes Stable Diffusion v1.5 on 1,200 WikiArt Impressionism paintings at
+512×512 and compares three adaptation strategies: LoRA at ranks 4, 16 and 64, full U-Net
+fine-tuning, and DreamBooth.
 
-![method comparison](report/figures/hero_grid_8models.png)
+![Eight models on the same prompts and seeds](report/figures/hero_grid_8models.png)
 
-## 🏆 Headline results
+## Results
 
-Measured on a **validated** metric: 2,048 images/model vs 2,800 held-out paintings, **240 prompts
-containing zero style words**, with the real-vs-real FID floor re-measured at the same sample size
-(**37.6**). Full table: [`experiments/RESULTS.md`](experiments/RESULTS.md).
+Each model generated 2,048 images from 240 prompts containing no style words, scored against 2,800
+held-out paintings. Two disjoint halves of the real reference set score FID 37.6 against each other;
+that is the floor everything else is measured against.
 
-| Model | FID ↓ | vs floor | CLIP ↑ | Size |
+| Model | FID | Above floor | CLIP | Size |
 |---|---|---|---|---|
-| 🥇 **LoRA r16 @×1.5** | **112.8** | +75.2 | 32.93 | **12.8 MB** |
-| 🥈 LoRA r64 @×1.5 | 114.5 | +76.9 | **33.10** | 51 MB |
-| Full fine-tune *(images-seen matched)* | 121.5 | +83.9 | 32.84 | **3.44 GB** |
-| Base SD-1.5 *(no fine-tune)* | 128.3 | +90.7 | 32.72 | — |
+| LoRA r16, scale 1.5 | 112.8 | +75.2 | 32.93 | 12.8 MB |
+| LoRA r64, scale 1.5 | 114.5 | +76.9 | 33.10 | 51 MB |
+| LoRA r4, scale 1.5 | 116.9 | +79.3 | 32.67 | 3.3 MB |
+| DreamBooth | 119.7 | +82.1 | 32.71 | 12.8 MB |
+| Full fine-tune, images-seen matched | 121.5 | +83.9 | 32.84 | 3.44 GB |
+| Base SD-1.5, no fine-tune | 128.3 | +90.7 | 32.72 | — |
 
-1. **A 12.8 MB LoRA beats a 3.44 GB full fine-tune** (−8.7 FID at 0.37 % of the parameters).
-   *Every* adapter we trained beats *both* full fine-tunes. Style adaptation is a **low-rank problem**.
-2. **The LoRA inference scale is free performance** — ×1.0 → ×1.5 is worth **−6.5 FID**, no retraining.
-3. **Our first evaluation was wrong, and we caught it ourselves.** At N=256, two sets of *genuine*
-   Impressionist paintings scored **FID 156.7 against each other** — the metric could not tell real art
-   from real art. Rebuilding it **reversed two conclusions we had already written down** (LoRA rank 64,
-   and DreamBooth's trigger token) and exposed **an experiment we had never actually run**.
-   → [`JOURNEY.md`](JOURNEY.md) §8
+The 12.8 MB adapter beats the 3.44 GB full fine-tune by 8.7 FID while training 0.37% as many
+parameters, and every adapter here beats both full fine-tunes. Raising the LoRA scale from 1.0 to
+1.5 at inference is worth another 6.5 FID and costs nothing to apply.
 
-> The project's real thesis: **validate your measurement before you trust anything it tells you.**
-
-## Hardware (measured)
-NVIDIA **RTX 5090 (32 GB, Blackwell sm_120)** · Windows 11 · Python 3.12 (via `uv`) · PyTorch **cu128**.
+The first version of this evaluation used 256 images per model. At that sample size two sets of
+genuine Impressionist paintings score FID 156.7 against each other, so the metric could not separate
+real art from real art, never mind rank six models. Rebuilding it reversed two conclusions that had
+already been written up — rank 64 went from worst LoRA to second best overall — and turned up an
+experiment that had never actually been run: DreamBooth had only ever been scored on prompts that
+omit its own trigger token. `JOURNEY.md` §8 covers this in full.
 
 ## Setup
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File ".\environment\setup.ps1"
 .\.venv\Scripts\Activate.ps1
 python environment\verify_gpu.py   # expect: VERIFY_OK sm_120
 ```
-See `environment/setup.log` for the install transcript.
 
-## Layout
-| Path | Contents |
-|---|---|
-| `PROJECT_BRIEF.md` | Master spec / goal prompt |
-| **`TUTORIAL.md`** | **Hands-on guide: play with the models, prompt them, train, see metrics** |
-| **`MODELS.md`** | **Model passports + the hyper-parameter story (what we tuned, what it cost)** |
-| **`HYPERPARAMETERS.md`** | **Reference: every knob, what it means, our value, what breaks if wrong** |
-| **`JOURNEY.md`** | **The process: roadmap, timeline, every failure → diagnosis → fix** |
-| `environment/` | Setup, requirements, GPU verification |
-| `src/phase1_ddpm_from_scratch/` | From-scratch DDPM (U-Net, diffusion, train, sample) |
-| `src/phase2_sd_finetune/` | SD fine-tuning: LoRA / full / DreamBooth + eval |
-| `src/common/` | Shared utilities (schedules, EMA, data, metrics, viz) |
-| `experiments/` | Run logs, `RESULTS.md`, the evaluation result JSONs |
-| `outputs/` | Sample grids, TensorBoard scalars, per-run configs *(see below)* |
-| `related_work/` | Grounded literature review (real arXiv metadata) |
-| `report/`, `slides/` | Write-up & presentation |
+Built and measured on an RTX 5090 (32 GB, Blackwell sm_120), Windows 11, Python 3.12 via `uv`,
+PyTorch cu128. `environment/setup.log` has the install transcript.
 
-## 📦 What is — and isn't — in this repository
+## Usage
 
-The working tree is **~20 GB**; this repo is **~70 MB**. Excluded content is **regenerable**, and
-everything *cited as evidence* by the write-ups is included, so every artifact link resolves.
-
-| ✅ Included (the evidence) | ❌ Excluded (regenerable) |
-|---|---|
-| All source code + all documentation | `.venv/` (5.1 GB) |
-| **`outputs/phase1/*/samples/`** — the EMA noise→butterflies proof | Phase-1 checkpoints (572 MB each) |
-| Phase-2 sample grids, first + last step of every run | Full-FT UNets (**3.44 GB** each) |
-| **LoRA r16 (12.8 MB) + r4 (3.3 MB) weights** | 18,432 evaluation images (2.2 GB) |
-| `report/figures/` — every figure | WikiArt dataset (525 MB) |
-| `experiments/*.log` + result JSONs — the raw timeline | |
-| TensorBoard scalars + per-run `config.json` | |
-
-**The two LoRA adapters are deliberately shipped** so the headline claim is verifiable by anyone who
-clones this — the *entire* fine-tuned model is 12.8 MB:
+Generate an image with the fine-tuned model:
 
 ```bash
 python src/phase2_sd_finetune/generate.py "a harbour with sailing boats at sunset"
 ```
 
-To rebuild what's excluded: `python src/phase2_sd_finetune/prepare_data.py --max-images 1200 --holdout 300`
-(dataset), then the trainers in [`TUTORIAL.md`](TUTORIAL.md) §6. The WikiArt imagery is also left out
-to avoid redistributing it.
-
-## 🔍 Verifying the claims
+Print every metric in the project, read from the committed logs and result files:
 
 ```bash
-./metrics.sh          # every metric in the project, from the logged artifacts (PowerShell: .\metrics.ps1)
+./metrics.sh        # PowerShell: .\metrics.ps1
 ```
 
-Reads the TensorBoard scalars and result JSONs committed here — Phase-1 training curves, the retracted
-v1 table, and the final 9-model v2 evaluation. Nothing in the write-ups is hand-typed.
+`TUTORIAL.md` covers prompting, training, and evaluation in more detail.
 
-## Status
-Complete. See the milestone checklist in `PROJECT_BRIEF.md` §10 and the final results in
-[`experiments/RESULTS.md`](experiments/RESULTS.md).
+## Layout
+
+| Path | Contents |
+|---|---|
+| `PROJECT_BRIEF.md` | Master spec: goal, plan, experiment ladder, deliverables |
+| `TUTORIAL.md` | How to prompt the models, train, and read the metrics |
+| `MODELS.md` | Per-model passports and the hyper-parameter story |
+| `HYPERPARAMETERS.md` | Reference for every knob: what it means and what we set it to |
+| `JOURNEY.md` | Roadmap, timeline, and every failure with its diagnosis and fix |
+| `src/phase1_ddpm_from_scratch/` | The from-scratch DDPM: U-Net, diffusion, train, sample |
+| `src/phase2_sd_finetune/` | SD fine-tuning: LoRA, full, DreamBooth, inference, evaluation |
+| `src/common/` | Schedules, EMA, seeding, metrics, plotting |
+| `experiments/` | Run logs, result JSONs, `RESULTS.md` |
+| `outputs/` | Sample grids, TensorBoard scalars, per-run configs |
+| `related_work/` | Literature review |
+| `report/`, `slides/` | Write-up and presentation |
+
+The working tree is about 20 GB, most of it model checkpoints, the dataset, and 18,432 evaluation
+images. Those are left out here since they can all be regenerated — `prepare_data.py` rebuilds the
+dataset and the training scripts rebuild the weights. The LoRA adapters are small enough to include,
+so `generate.py` works straight after a clone. Sample grids, figures, logs, TensorBoard scalars and
+per-run configs are all committed, so every artifact the write-ups cite resolves.

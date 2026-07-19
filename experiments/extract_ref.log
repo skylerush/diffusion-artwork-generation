@@ -1,0 +1,143 @@
+﻿19:22:07  ================ reference extraction START (target 2500) ================
+19:22:07  attempt 1 : have=0  need=2500  skip=1500
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\extract_reference.ps1:31 char:5
++     & $py -u "$dir\src\phase2_sd_finetune\prepare_data.py" `
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+target style 'Impressionism' = index 12; writing to C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\data\impressionism_512_ref
+'The read operation timed out' thrown while requesting GET 
+https://huggingface.co/datasets/huggan/wikiart/resolve/d559852d2b232e0fcf195e775866964f0564f2b5/data/train-00003-of-00072.parquet
+Retrying in 1s [Retry 1/5].
+'[Errno 11001] getaddrinfo failed' thrown while requesting GET 
+https://huggingface.co/datasets/huggan/wikiart/resolve/d559852d2b232e0fcf195e775866964f0564f2b5/data/train-00003-of-00072.parquet
+Retrying in 2s [Retry 2/5].
+Traceback (most recent call last):
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\src\phase2_sd_finetune\prepare_data.py", line 94, in <module>
+    main()
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\src\phase2_sd_finetune\prepare_data.py", line 62, in main
+    for ex in ds:
+              ^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\iterable_dataset.py", line 2815, in __iter__
+    for key, example in ex_iterable:
+                        ^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\iterable_dataset.py", line 2352, in __iter__
+    for key, pa_table in self._iter_arrow():
+                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\iterable_dataset.py", line 2377, in _iter_arrow
+    for key, pa_table in self.ex_iterable._iter_arrow():
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\iterable_dataset.py", line 536, in _iter_arrow
+    for key, pa_table in iterator:
+                         ^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\iterable_dataset.py", line 419, in _iter_arrow
+    for key, pa_table in self.generate_tables_fn(**gen_kwags):
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\packaged_modules\parquet\parquet.py", line 207, in _generate_tables
+    for batch_idx, record_batch in enumerate(
+                                   ^^^^^^^^^^
+  File "pyarrow/_dataset.pyx", line 3934, in _iterator
+    for batch in batch_iter:
+  File "pyarrow/_dataset.pyx", line 3524, in pyarrow._dataset.TaggedRecordBatchIterator.__next__
+    batch = GetResultValue(move(self.iterator.get().Next()))
+  File "pyarrow/error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+    return check_status(status)
+  File "pyarrow/error.pxi", line 89, in pyarrow.lib.check_status
+    RestorePyError(status)
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\datasets\utils\file_utils.py", line 844, in read_with_retries
+    out = read(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\hf_file_system.py", line 1238, in read
+    return super().read(length)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\fsspec\spec.py", line 2125, in read
+    out = self.cache._fetch(self.loc, self.loc + length)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\fsspec\caching.py", line 279, in _fetch
+    self.cache = self.fetcher(start, end)  # new block replaces old
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\hf_file_system.py", line 1194, in _fetch_range
+    r = http_backoff("GET", url, headers=headers, timeout=constants.HF_HUB_DOWNLOAD_TIMEOUT)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\utils\_http.py", line 574, in http_backoff
+    return next(
+           ^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\utils\_http.py", line 482, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\httpx\_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+19:35:51  attempt 1 ended (exit 1, now have 0)
+19:41:09  attempt 2 : have=0  need=2500  skip=1500
+14:07:19  ================ reference extraction START (target 2500) ================
+14:07:19  attempt 1 : have=0  need=2500  skip=1500
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\extract_reference.ps1:31 
+char:5
++     & $py -u "$dir\src\phase2_sd_finetune\prepare_data.py" `
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+target style 'Impressionism' = index 12; writing to C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\data\impressionism_512_ref
+  scanned=5327 skipped=1500 kept train=0 heldout=50
+  scanned=5469 skipped=1500 kept train=0 heldout=100
+  scanned=5631 skipped=1500 kept train=0 heldout=150
+  scanned=5801 skipped=1500 kept train=0 heldout=200
+  scanned=5973 skipped=1500 kept train=0 heldout=250
+  scanned=6135 skipped=1500 kept train=0 heldout=300
+  scanned=6328 skipped=1500 kept train=0 heldout=350
+  scanned=6552 skipped=1500 kept train=0 heldout=400
+  scanned=6729 skipped=1500 kept train=0 heldout=450
+  scanned=6938 skipped=1500 kept train=0 heldout=500
+  scanned=7097 skipped=1500 kept train=0 heldout=550
+  scanned=7261 skipped=1500 kept train=0 heldout=600
+  scanned=7438 skipped=1500 kept train=0 heldout=650
+  scanned=7594 skipped=1500 kept train=0 heldout=700
+  scanned=7797 skipped=1500 kept train=0 heldout=750
+  scanned=7981 skipped=1500 kept train=0 heldout=800
+  scanned=8137 skipped=1500 kept train=0 heldout=850
+  scanned=8301 skipped=1500 kept train=0 heldout=900
+  scanned=8462 skipped=1500 kept train=0 heldout=950
+  scanned=8635 skipped=1500 kept train=0 heldout=1000
+  scanned=8778 skipped=1500 kept train=0 heldout=1050
+  scanned=8975 skipped=1500 kept train=0 heldout=1100
+  scanned=9117 skipped=1500 kept train=0 heldout=1150
+  scanned=9274 skipped=1500 kept train=0 heldout=1200
+  scanned=9428 skipped=1500 kept train=0 heldout=1250
+  scanned=9591 skipped=1500 kept train=0 heldout=1300
+  scanned=9781 skipped=1500 kept train=0 heldout=1350
+  scanned=9950 skipped=1500 kept train=0 heldout=1400
+  scanned=10115 skipped=1500 kept train=0 heldout=1450
+  scanned=10257 skipped=1500 kept train=0 heldout=1500
+  scanned=10383 skipped=1500 kept train=0 heldout=1550
+  scanned=10548 skipped=1500 kept train=0 heldout=1600
+  scanned=10706 skipped=1500 kept train=0 heldout=1650
+  scanned=10879 skipped=1500 kept train=0 heldout=1700
+  scanned=11017 skipped=1500 kept train=0 heldout=1750
+  scanned=11182 skipped=1500 kept train=0 heldout=1800
+  scanned=11338 skipped=1500 kept train=0 heldout=1850
+  scanned=11498 skipped=1500 kept train=0 heldout=1900
+  scanned=11663 skipped=1500 kept train=0 heldout=1950
+  scanned=11836 skipped=1500 kept train=0 heldout=2000
+  scanned=11992 skipped=1500 kept train=0 heldout=2050
+  scanned=12183 skipped=1500 kept train=0 heldout=2100
+  scanned=12338 skipped=1500 kept train=0 heldout=2150
+  scanned=12529 skipped=1500 kept train=0 heldout=2200
+  scanned=12696 skipped=1500 kept train=0 heldout=2250
+  scanned=12875 skipped=1500 kept train=0 heldout=2300
+  scanned=13041 skipped=1500 kept train=0 heldout=2350
+  scanned=13245 skipped=1500 kept train=0 heldout=2400
+  scanned=13370 skipped=1500 kept train=0 heldout=2450
+  scanned=13421 skipped=1500 kept train=0 heldout=2500
+DONE: scanned=13421 train=0 heldout=2500 -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\data\impressionism_512_ref
+14:27:52  attempt 1 ended (exit 0, now have 2500)
+14:27:53  TARGET REACHED: 2500 images
+14:27:53  ================ reference extraction DONE: 2500 images ================

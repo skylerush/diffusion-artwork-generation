@@ -1,0 +1,16 @@
+{
+  "data": "C:\\Users\\sagiz\\Desktop\\Shenkar\\neural networks\\diffusion-artwork-generation\\data\\impressionism_512\\train",
+  "base": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+  "lr": 1e-06,
+  "steps": 1500,
+  "batch_size": 1,
+  "grad_accum": 4,
+  "size": 512,
+  "seed": 0,
+  "max_util": 0.65,
+  "sample_every": 250,
+  "ckpt_every": 500,
+  "log_every": 20,
+  "run_name": "full_ft",
+  "smoke": false
+}

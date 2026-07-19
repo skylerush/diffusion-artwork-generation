@@ -1,0 +1,7 @@
+# OPTIONAL accelerators. They may not yet ship Blackwell (sm_120) wheels — install only if
+# verify_gpu.py works and you specifically need them. The project's default path (PyTorch SDPA
+# attention + standard AdamW) works WITHOUT these.
+
+xformers          # memory-efficient attention; needs a cu128 / sm_120-matched build
+bitsandbytes      # 8-bit optimizers (lower-VRAM full fine-tune); Windows+Blackwell support varies
+wandb             # cloud experiment tracking (alternative/supplement to TensorBoard)

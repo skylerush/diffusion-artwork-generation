@@ -1,0 +1,84 @@
+# =============================================================================
+#  .gitignore — tuned for a SUBMISSION repo, not just local hygiene.
+#
+#  Working tree is ~20 GB; the published repo is ~60 MB. The rule we follow:
+#  exclude anything REGENERABLE (weights, datasets, bulk generated images),
+#  keep everything that is EVIDENCE (sample grids, figures, logs, result JSONs,
+#  TensorBoard scalars, per-run configs) — because in this project the evidence
+#  IS the deliverable. Every artifact cited in JOURNEY.md / report.md resolves.
+# =============================================================================
+
+# ---- Environments -----------------------------------------------------------
+# NOTE: git does NOT support trailing inline comments — "pattern  # note" makes
+# the comment part of the pattern and silently matches nothing. Comments go on
+# their own line. (.venv/ below was initially written that way and was excluded
+# only by luck, via the .gitignore uv writes inside .venv itself.)
+# .venv is 5.1 GB
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ---- Datasets (525 MB) ------------------------------------------------------
+# Rebuild with: python src/phase2_sd_finetune/prepare_data.py --max-images 1200 --holdout 300
+# Also avoids redistributing WikiArt imagery.
+data/
+
+# ---- Model weights ----------------------------------------------------------
+# Excluded by pattern (phase-1 checkpoints are 572 MB each; full-FT UNets 3.44 GB).
+# EXCEPTION: the two small LoRA adapters are kept, so the headline claim
+# ("12.8 MB beats 3.44 GB") is verifiable by anyone who clones this:
+#     python src/phase2_sd_finetune/generate.py "a harbour at sunset"
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+!outputs/phase2/lora_r16/ckpt/lora_last.pt
+!outputs/phase2/lora_r4/ckpt/lora_last.pt
+outputs/phase2/*/ckpt/unet_last/
+
+# ---- Bulk generated images --------------------------------------------------
+# 9 models x 2,048 eval images = ~2.2 GB. Regenerate with infer.py; the scores
+# they produced are preserved in experiments/eval_v2_results.json.
+outputs/phase2_eval_v2/
+outputs/**/eval_samples/
+data/_dreambooth_class/
+
+# ---- Throwaway runs ---------------------------------------------------------
+outputs/_smoke*/
+outputs/phase2/_memtest*/
+outputs/phase1/run/
+outputs/phase1/p1a_speedcheck/
+
+# ---- Phase-2 sample grids: keep FIRST + LAST step per run -------------------
+# Full set is ~84 MB of 2 MB PNGs; first+last (~26 MB) shows the training
+# progression each doc cites (e.g. "refines from step 250 -> 1500").
+outputs/phase2/*/samples/*
+!outputs/phase2/*/samples/sample_000200.png
+!outputs/phase2/*/samples/sample_000250.png
+!outputs/phase2/*/samples/sample_001200.png
+!outputs/phase2/*/samples/sample_001500.png
+
+# ---- KEPT ON PURPOSE (do NOT add blanket rules for these) -------------------
+#   outputs/phase1/*/samples/   the EMA noise -> butterflies proof (D1)
+#   outputs/phase1/*/tb/        TensorBoard scalars -> powers ./metrics.sh
+#   outputs/*/*/config.json     per-run hyper-parameter provenance
+#   outputs/playground/         demo images
+#   experiments/*.log           sweep + eval timelines (evidence for JOURNEY.md)
+#   experiments/*.json          the v2 results
+#   report/figures/             all report figures
+# A blanket `*.log` or `outputs/` rule silently breaks the evidence index.
+
+# ---- Personal scratch (kept on disk, not published) -------------------------
+# "what it is.txt" = second-person chat summary, duplicates the .md docs
+# "commands.txt"   = empty
+what it is.txt
+commands.txt
+
+# ---- Trackers / OS ----------------------------------------------------------
+wandb/
+runs/
+lightning_logs/
+Thumbs.db
+.DS_Store

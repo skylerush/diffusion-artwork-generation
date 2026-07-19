@@ -1,0 +1,22 @@
+# Phase 1 DDPM — v1 default hyper-parameters (documentation of the full-run config).
+# train.py is argparse-driven; these mirror its defaults for a real 64px run.
+# The deliberate-failure variants (P1-r01..r03) override single fields — see PROJECT_BRIEF §6.
+
+data: butterflies          # 'butterflies' (Phase 1a) or a folder e.g. data/impressionism_64 (Phase 1b)
+image_size: 64
+batch_size: 128
+base: 128
+ch_mults: [1, 2, 2, 2]
+num_res_blocks: 2
+attn_res: [16]
+timesteps: 1000
+schedule: cosine           # P1-r03 failure variant: linear
+lr: 2.0e-4                 # P1-r01 failure variant: 2.0e-3 (diverges)
+steps: 100000
+ema_decay: 0.9999          # P1-r02 failure variant: disable EMA
+dropout: 0.1
+amp: bf16
+ddim_steps: 50
+sample_every: 2000
+ckpt_every: 5000
+seed: 0

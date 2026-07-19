@@ -1,0 +1,36 @@
+{
+  "data": "butterflies",
+  "max_images": null,
+  "image_size": 64,
+  "batch_size": 128,
+  "base": 128,
+  "ch_mults": [
+    1,
+    2,
+    2,
+    2
+  ],
+  "num_res_blocks": 2,
+  "attn_res": [
+    16
+  ],
+  "timesteps": 1000,
+  "schedule": "cosine",
+  "lr": 0.0002,
+  "steps": 20000,
+  "ema_decay": 0.9999,
+  "dropout": 0.0,
+  "num_workers": 0,
+  "sample_every": 2000,
+  "ckpt_every": 1000,
+  "log_every": 200,
+  "seed": 0,
+  "amp": "bf16",
+  "ddim_steps": 50,
+  "max_util": 0.65,
+  "out": null,
+  "run_name": "p1a_butterflies",
+  "resume": "C:\\Users\\sagiz\\Desktop\\Shenkar\\neural networks\\diffusion-artwork-generation\\outputs\\phase1\\p1a_butterflies\\ckpt\\last.pt",
+  "reset_ema": true,
+  "smoke": false
+}

@@ -1,0 +1,60 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260628184940
+Username: SAGIE\sagiz
+RunAs User: SAGIE\sagiz
+Configuration Name: 
+Machine: SAGIE (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force; & "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\setup.ps1"
+; $_ec = if ($null -ne $LASTEXITCODE) { $LASTEXITCODE } elseif ($?) { 0 } else { 1 }
+; (Get-Location).Path | Out-File -FilePath 'C:\Users\sagiz\AppData\Local\Temp\claude\claude-pwd-ps-4223' -Encoding utf8 -NoNewline
+; if ($ExecutionContext.SessionState.LanguageMode -eq 'FullLanguage') { $host.SetShouldExit($_ec) } else { exit $_ec }
+Process ID: 39504
+PSVersion: 5.1.26100.8457
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8457
+BuildVersion: 10.0.26100.8457
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== [1/6] Install uv (via the existing Python 3.14 pip) ===
+❯
+uv -> C:\Users\sagiz\AppData\Local\Python\pythoncore-3.14-64\Scripts\uv.exe
+❯
+=== [2/6] Install managed Python 3.12 ===
+❯
+=== [3/6] Create project venv (.venv) on Python 3.12 ===
+❯
+=== [4/6] Install PyTorch + torchvision (CUDA 12.8 / Blackwell) ===
+❯
+=== [5/6] Install ML dependencies ===
+  ├───────────┼───────────────────────────────────────────────────────────────────────────────────┤
+  │ RAM       │ 96 GB                                                                             │
+  ├───────────┼───────────────────────────────────────────────────────────────────────────────────┤
+  │ Disk free │ 201 GB                                                                            │
+  ├───────────┼───────────────────────────────────────────────────────────────────────────────────┤
+  │ Git       │ ✅✅ 2.43                                                                           │
+  ├───────────┼───────────────────────────────────────────────────────────────────────────────────┤
+  │ Python    │ �� 3.14.0 from the Windows Store stub — unsuitable for ML                         │
+  ├───────────┼───────────────────────────────────────────────────────────────────────────────────┤
+  │ Torch     │ ❌❌ not installed                                                                  │
+  └───────────┴───────────────────────────────────────────────────────────────────────────────────┘
+
+  Two things matter a lot and I want to be precise (no guessing):
+
+  1. Blackwell (sm_120) needs CUDA 12.8+ and a recent PyTorch cu128 build. Older torch wheels won't run on a 5090 at all. We'll install from the cu128 index.
+  2. Python 3.14 (Store stub) is the wrong interpreter — PyTorch/diffusers wheels lag new Python releases, and the Store build sandboxes pip. We want a real Python 3.12 venv.
+
+  With 32 GB VRAM we have way more headroom than the L4 plan: we can do full fine-tuning of SD 1.5 at 512px (not just LoRA), bigger batches, and a higher-res from-scratch DDPM (64px, maybe a latent model).
+                                                                                           Jump to bottom (ctrl+End) ↓
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯
+PS>TerminatingError(): "requirements install failed (exit code 2)"
+SETUP_FAILED: requirements install failed (exit code 2)
+**********************
+Windows PowerShell transcript end
+End time: 20260628185321
+**********************

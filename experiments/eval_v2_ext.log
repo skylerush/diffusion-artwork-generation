@@ -1,0 +1,109 @@
+﻿16:40:07  === EXT: waiting for dreambooth generation to finish ===
+16:51:42  EXT: wait over (dreambooth imgs: 2048)
+16:51:43  BEGIN eval:v2-8models
+REFERENCE: 2800 real held-out paintings (from 2 folder(s))
+
+[floor] REAL vs REAL  (1400 vs 1400) ù a perfect model cannot beat this ...
+[floor] FID = 37.60
+
+computing reference Inception statistics once ...
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural 
+networks\diffusion-artwork-generation\environment\run_ext_after_dreambooth.ps1:14 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6911.61it/s]
+  base               N= 2048  FID  128.35  (+90.75 vs floor)  CLIP 32.72
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6253.94it/s]
+  lora_r4            N= 2048  FID  116.87  (+79.28 vs floor)  CLIP 32.67
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 54997.30it/s]
+  lora_r16_s1.0      N= 2048  FID  119.30  (+81.71 vs floor)  CLIP 32.89
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 5129.42it/s]
+  lora_r16_s1.5      N= 2048  FID  112.82  (+75.22 vs floor)  CLIP 32.93
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6410.30it/s]
+  lora_r64           N= 2048  FID  114.48  (+76.89 vs floor)  CLIP 33.10
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 7141.20it/s]
+  dreambooth         N= 2048  FID  119.65  (+82.05 vs floor)  CLIP 32.71
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6997.86it/s]
+  full_ft            N= 2048  FID  122.95  (+85.36 vs floor)  CLIP 32.78
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6037.89it/s]
+  full_ft_matched    N= 2048  FID  121.48  (+83.88 vs floor)  CLIP 32.84
+
+saved -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\experiments\eval_v2_results.json
+
+FID minus floor is the honest number: how far the model sits ABOVE what real art scores.
+17:05:26  END   eval:v2-8models (exit 0)
+17:05:26  BEGIN hero-grid
+loading pipeline ...
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural 
+networks\diffusion-artwork-generation\environment\run_ext_after_dreambooth.ps1:14 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:02,  2.36it/s]
+Loading pipeline components...:  33%|###3      | 2/6 [00:00<00:01,  3.40it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 2717.86it/s]
+
+Loading pipeline components...:  67%|######6   | 4/6 [00:01<00:00,  3.36it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:01<00:00,  4.00it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  4.31it/s]
+[1/8] Base SD-1.5
+C:\Users\sagiz\Desktop\Shenkar\neural 
+networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py:205: UserWarning: 
+The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory 
+does not use symlinks anymore.
+  warnings.warn(
+    prompt 1 done
+    prompt 2 done
+[2/8] LoRA r4 @1.5
+    prompt 1 done
+    prompt 2 done
+[3/8] LoRA r16 @1.0
+    prompt 1 done
+    prompt 2 done
+[4/8] LoRA r16 @1.5
+    prompt 1 done
+    prompt 2 done
+[5/8] LoRA r64 @1.5
+    prompt 1 done
+    prompt 2 done
+[6/8] DreamBooth @1.5
+    prompt 1 done
+    prompt 2 done
+[7/8] Full FT
+    prompt 1 done
+    prompt 2 done
+[8/8] Full FT matched
+    prompt 1 done
+    prompt 2 done
+HERO_GRID_DONE -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\report\figures\hero_grid_8models.png
+17:08:39  END   hero-grid (exit 0)
+17:08:39  === EXT ALL DONE ===

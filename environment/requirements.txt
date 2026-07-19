@@ -1,0 +1,36 @@
+# Core ML stack for the diffusion-artwork project.
+# NOTE: torch / torchvision are installed SEPARATELY from the CUDA 12.8 (Blackwell) index
+# by setup.ps1 — do NOT add them here, or pip may pull a CPU/older-CUDA build.
+
+diffusers>=0.27
+transformers>=4.40
+accelerate>=0.30
+datasets>=2.19
+huggingface_hub>=0.23
+peft>=0.11
+safetensors
+
+# numerics / imaging
+numpy
+pillow
+opencv-python
+einops
+scipy
+
+# metrics
+torchmetrics
+clean-fid
+torch-fidelity
+
+# experiment logging / viz
+tensorboard
+matplotlib
+tqdm
+
+# text / config / notebooks
+ftfy
+regex
+omegaconf
+pyyaml
+ipykernel
+jupyter

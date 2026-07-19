@@ -1,0 +1,2760 @@
+﻿19:12:56  ======================= EVAL v2 START =======================
+19:12:56  BEGIN train:full_ft_matched
+loading SD-1.5 from stable-diffusion-v1-5/stable-diffusion-v1-5
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2.ps1:23 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 10301.02it/s]
+C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py:205: UserWarning: The `local_dir_use_symlinks` 
+argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+trainable UNet params: 859.5M (FULL fine-tune)
+dataset: 1200 image-caption pairs
+step     0 | loss 0.1626 | 3.01 img/s
+step    20 | loss 0.2043 | 5.34 img/s
+step    40 | loss 0.1845 | 5.55 img/s
+step    60 | loss 0.0882 | 5.62 img/s
+step    80 | loss 0.1187 | 5.50 img/s
+step   100 | loss 0.0537 | 5.45 img/s
+step   120 | loss 0.1197 | 5.43 img/s
+step   140 | loss 0.1966 | 5.42 img/s
+step   160 | loss 0.1429 | 5.40 img/s
+step   180 | loss 0.1585 | 5.40 img/s
+step   200 | loss 0.1939 | 5.41 img/s
+step   220 | loss 0.1550 | 5.42 img/s
+step   240 | loss 0.2535 | 5.41 img/s
+  saved samples @ step 250
+step   260 | loss 0.1537 | 4.69 img/s
+step   280 | loss 0.2347 | 4.73 img/s
+step   300 | loss 0.3905 | 4.74 img/s
+step   320 | loss 0.2690 | 4.75 img/s
+step   340 | loss 0.1714 | 4.76 img/s
+step   360 | loss 0.2131 | 4.78 img/s
+step   380 | loss 0.1368 | 4.80 img/s
+step   400 | loss 0.2067 | 4.82 img/s
+step   420 | loss 0.3103 | 4.84 img/s
+step   440 | loss 0.1694 | 4.86 img/s
+step   460 | loss 0.1272 | 4.87 img/s
+step   480 | loss 0.1565 | 4.86 img/s
+  saved samples @ step 500
+step   500 | loss 0.1944 | 4.79 img/s
+step   520 | loss 0.1963 | 4.79 img/s
+step   540 | loss 0.1772 | 4.79 img/s
+step   560 | loss 0.2022 | 4.80 img/s
+step   580 | loss 0.2015 | 4.82 img/s
+step   600 | loss 0.1672 | 4.85 img/s
+step   620 | loss 0.2753 | 4.87 img/s
+step   640 | loss 0.2033 | 4.89 img/s
+step   660 | loss 0.1291 | 4.91 img/s
+step   680 | loss 0.3732 | 4.92 img/s
+step   700 | loss 0.2601 | 4.94 img/s
+step   720 | loss 0.0923 | 4.96 img/s
+step   740 | loss 0.2812 | 4.97 img/s
+  saved samples @ step 750
+step   760 | loss 0.2046 | 4.92 img/s
+step   780 | loss 0.1643 | 4.94 img/s
+step   800 | loss 0.1912 | 4.95 img/s
+step   820 | loss 0.1412 | 4.96 img/s
+step   840 | loss 0.1277 | 4.98 img/s
+step   860 | loss 0.1953 | 4.98 img/s
+step   880 | loss 0.1608 | 4.98 img/s
+step   900 | loss 0.2562 | 4.98 img/s
+step   920 | loss 0.2184 | 4.98 img/s
+step   940 | loss 0.2557 | 4.99 img/s
+step   960 | loss 0.0950 | 4.99 img/s
+step   980 | loss 0.2133 | 4.99 img/s
+  saved samples @ step 1000
+step  1000 | loss 0.2009 | 4.96 img/s
+step  1020 | loss 0.1144 | 4.96 img/s
+step  1040 | loss 0.2566 | 4.95 img/s
+step  1060 | loss 0.1834 | 4.95 img/s
+step  1080 | loss 0.1430 | 4.96 img/s
+step  1100 | loss 0.0819 | 4.96 img/s
+step  1120 | loss 0.1673 | 4.97 img/s
+step  1140 | loss 0.1742 | 4.97 img/s
+step  1160 | loss 0.1222 | 4.98 img/s
+step  1180 | loss 0.1767 | 4.98 img/s
+Traceback (most recent call last):
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\src\phase2_sd_finetune\train_full.py", line 136, in <module>
+    main()
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\src\phase2_sd_finetune\train_full.py", line 113, in main
+    loss.backward()
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\torch\_tensor.py", line 631, in backward
+    torch.autograd.backward(
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\torch\autograd\__init__.py", line 381, in backward
+    _engine_run_backward(
+  File "C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\torch\autograd\graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.AcceleratorError: CUDA error: an illegal memory access was encountered
+Search for `cudaErrorIllegalAddress' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+14:07:19  ======================= EVAL v2 START =======================
+14:07:19  BEGIN train:full_ft_matched
+loading SD-1.5 from stable-diffusion-v1-5/stable-diffusion-v1-5
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2.ps1:23 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]
+Loading weights:  85%|########5 | 167/196 [00:00<00:00, 1662.64it/s]
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 1704.55it/s]
+C:\Users\sagiz\Desktop\Shenkar\neural 
+networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py:205: UserWarning: 
+The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory 
+does not use symlinks anymore.
+  warnings.warn(
+trainable UNet params: 859.5M (FULL fine-tune)
+dataset: 1200 image-caption pairs
+step     0 | loss 0.1626 | 0.96 img/s
+step    20 | loss 0.2043 | 1.81 img/s
+step    40 | loss 0.1845 | 1.85 img/s
+step    60 | loss 0.0882 | 1.87 img/s
+step    80 | loss 0.1187 | 1.87 img/s
+step   100 | loss 0.0537 | 1.87 img/s
+step   120 | loss 0.1197 | 1.86 img/s
+step   140 | loss 0.1966 | 1.87 img/s
+step   160 | loss 0.1429 | 1.86 img/s
+step   180 | loss 0.1585 | 1.87 img/s
+step   200 | loss 0.1939 | 1.87 img/s
+step   220 | loss 0.1550 | 1.87 img/s
+step   240 | loss 0.2535 | 1.87 img/s
+  saved samples @ step 250
+step   260 | loss 0.1537 | 1.85 img/s
+step   280 | loss 0.2347 | 1.86 img/s
+step   300 | loss 0.3905 | 1.86 img/s
+step   320 | loss 0.2690 | 1.86 img/s
+step   340 | loss 0.1713 | 1.87 img/s
+step   360 | loss 0.2131 | 1.87 img/s
+step   380 | loss 0.1368 | 1.87 img/s
+step   400 | loss 0.2067 | 1.87 img/s
+step   420 | loss 0.3103 | 1.87 img/s
+step   440 | loss 0.1694 | 1.88 img/s
+step   460 | loss 0.1272 | 1.88 img/s
+step   480 | loss 0.1565 | 1.88 img/s
+  saved samples @ step 500
+step   500 | loss 0.1944 | 1.87 img/s
+step   520 | loss 0.1963 | 1.87 img/s
+step   540 | loss 0.1772 | 1.87 img/s
+step   560 | loss 0.2022 | 1.87 img/s
+step   580 | loss 0.2015 | 1.87 img/s
+step   600 | loss 0.1672 | 1.87 img/s
+step   620 | loss 0.2754 | 1.87 img/s
+step   640 | loss 0.2033 | 1.87 img/s
+step   660 | loss 0.1291 | 1.87 img/s
+step   680 | loss 0.3732 | 1.87 img/s
+step   700 | loss 0.2601 | 1.87 img/s
+step   720 | loss 0.0923 | 1.87 img/s
+step   740 | loss 0.2812 | 1.88 img/s
+  saved samples @ step 750
+step   760 | loss 0.2046 | 1.87 img/s
+step   780 | loss 0.1643 | 1.86 img/s
+step   800 | loss 0.1912 | 1.86 img/s
+step   820 | loss 0.1412 | 1.85 img/s
+step   840 | loss 0.1277 | 1.85 img/s
+step   860 | loss 0.1953 | 1.84 img/s
+step   880 | loss 0.1608 | 1.84 img/s
+step   900 | loss 0.2562 | 1.84 img/s
+step   920 | loss 0.2184 | 1.84 img/s
+step   940 | loss 0.2558 | 1.84 img/s
+step   960 | loss 0.0950 | 1.83 img/s
+step   980 | loss 0.2134 | 1.83 img/s
+  saved samples @ step 1000
+step  1000 | loss 0.2009 | 1.82 img/s
+step  1020 | loss 0.1144 | 1.82 img/s
+step  1040 | loss 0.2566 | 1.82 img/s
+step  1060 | loss 0.1834 | 1.81 img/s
+step  1080 | loss 0.1430 | 1.81 img/s
+step  1100 | loss 0.0819 | 1.81 img/s
+step  1120 | loss 0.1673 | 1.81 img/s
+step  1140 | loss 0.1742 | 1.81 img/s
+step  1160 | loss 0.1222 | 1.81 img/s
+step  1180 | loss 0.1767 | 1.81 img/s
+step  1200 | loss 0.1828 | 1.81 img/s
+step  1220 | loss 0.2569 | 1.81 img/s
+step  1240 | loss 0.0547 | 1.81 img/s
+  saved samples @ step 1250
+step  1260 | loss 0.0883 | 1.81 img/s
+step  1280 | loss 0.2006 | 1.81 img/s
+step  1300 | loss 0.2774 | 1.81 img/s
+step  1320 | loss 0.1402 | 1.80 img/s
+step  1340 | loss 0.1703 | 1.80 img/s
+step  1360 | loss 0.1283 | 1.80 img/s
+step  1380 | loss 0.1770 | 1.80 img/s
+step  1400 | loss 0.1289 | 1.80 img/s
+step  1420 | loss 0.2104 | 1.80 img/s
+step  1440 | loss 0.0673 | 1.80 img/s
+step  1460 | loss 0.2182 | 1.80 img/s
+step  1480 | loss 0.1588 | 1.80 img/s
+  saved samples @ step 1500
+FULL_TRAIN_DONE
+15:59:37  END   train:full_ft_matched (exit 0)
+15:59:37  BEGIN gen:base
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2.ps1:23 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:01,  4.02it/s]
+Loading pipeline components...:  67%|######6   | 4/6 [00:00<00:00,  4.06it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:01<00:00,  4.51it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 2195.56it/s]
+
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  3.61it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  3.85it/s]
+model: BASE (no fine-tune) | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 16/2048
+  generated 32/2048
+  generated 48/2048
+  generated 64/2048
+  generated 80/2048
+  generated 96/2048
+  generated 112/2048
+  generated 128/2048
+  generated 144/2048
+  generated 160/2048
+  generated 176/2048
+  generated 192/2048
+  generated 208/2048
+  generated 224/2048
+  generated 240/2048
+  generated 256/2048
+  generated 272/2048
+  generated 288/2048
+  generated 304/2048
+  generated 320/2048
+  generated 336/2048
+  generated 352/2048
+  generated 368/2048
+  generated 384/2048
+  generated 400/2048
+  generated 416/2048
+  generated 432/2048
+  generated 448/2048
+  generated 464/2048
+  generated 480/2048
+  generated 496/2048
+  generated 512/2048
+  generated 528/2048
+  generated 544/2048
+  generated 560/2048
+  generated 576/2048
+  generated 592/2048
+  generated 608/2048
+  generated 624/2048
+  generated 640/2048
+  generated 656/2048
+  generated 672/2048
+  generated 688/2048
+  generated 704/2048
+  generated 720/2048
+  generated 736/2048
+  generated 752/2048
+  generated 768/2048
+  generated 784/2048
+  generated 800/2048
+  generated 816/2048
+  generated 832/2048
+  generated 848/2048
+  generated 864/2048
+  generated 880/2048
+  generated 896/2048
+  generated 912/2048
+  generated 928/2048
+  generated 944/2048
+  generated 960/2048
+  generated 976/2048
+  generated 992/2048
+  generated 1008/2048
+  generated 1024/2048
+  generated 1040/2048
+  generated 1056/2048
+  generated 1072/2048
+  generated 1088/2048
+  generated 1104/2048
+  generated 1120/2048
+  generated 1136/2048
+  generated 1152/2048
+  generated 1168/2048
+  generated 1184/2048
+  generated 1200/2048
+  generated 1216/2048
+  generated 1232/2048
+  generated 1248/2048
+  generated 1264/2048
+  generated 1280/2048
+  generated 1296/2048
+  generated 1312/2048
+  generated 1328/2048
+  generated 1344/2048
+  generated 1360/2048
+  generated 1376/2048
+  generated 1392/2048
+  generated 1408/2048
+  generated 1424/2048
+  generated 1440/2048
+  generated 1456/2048
+  generated 1472/2048
+  generated 1488/2048
+  generated 1504/2048
+  generated 1520/2048
+  generated 1536/2048
+  generated 1552/2048
+  generated 1568/2048
+  generated 1584/2048
+  generated 1600/2048
+  generated 1616/2048
+  generated 1632/2048
+  generated 1648/2048
+  generated 1664/2048
+  generated 1680/2048
+  generated 1696/2048
+  generated 1712/2048
+  generated 1728/2048
+  generated 1744/2048
+  generated 1760/2048
+  generated 1776/2048
+  generated 1792/2048
+  generated 1808/2048
+  generated 1824/2048
+  generated 1840/2048
+  generated 1856/2048
+  generated 1872/2048
+  generated 1888/2048
+  generated 1904/2048
+  generated 1920/2048
+  generated 1936/2048
+  generated 1952/2048
+  generated 1968/2048
+  generated 1984/2048
+  generated 2000/2048
+  generated 2016/2048
+  generated 2032/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\base\eval_samples
+16:31:18  END   gen:base (exit 0)
+16:31:18  BEGIN gen:lora_r4
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2.ps1:23 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 2121.28it/s]
+
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:03,  1.52it/s]
+Loading pipeline components...:  33%|###3      | 2/6 [00:00<00:01,  2.48it/s]
+Loading pipeline components...:  50%|#####     | 3/6 [00:01<00:01,  2.20it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:01<00:00,  4.25it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  3.85it/s]
+model: LoRA rank 4 @ scale 1.5 (128 layers) | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 16/2048
+  generated 32/2048
+  generated 48/2048
+  generated 64/2048
+  generated 80/2048
+  generated 96/2048
+  generated 112/2048
+  generated 128/2048
+  generated 144/2048
+  generated 160/2048
+  generated 176/2048
+  generated 192/2048
+  generated 208/2048
+  generated 224/2048
+  generated 240/2048
+  generated 256/2048
+  generated 272/2048
+  generated 288/2048
+  generated 304/2048
+  generated 320/2048
+  generated 336/2048
+  generated 352/2048
+  generated 368/2048
+  generated 384/2048
+  generated 400/2048
+  generated 416/2048
+  generated 432/2048
+  generated 448/2048
+  generated 464/2048
+  generated 480/2048
+  generated 496/2048
+  generated 512/2048
+  generated 528/2048
+  generated 544/2048
+  generated 560/2048
+  generated 576/2048
+  generated 592/2048
+  generated 608/2048
+  generated 624/2048
+  generated 640/2048
+  generated 656/2048
+  generated 672/2048
+  generated 688/2048
+  generated 704/2048
+  generated 720/2048
+  generated 736/2048
+  generated 752/2048
+  generated 768/2048
+  generated 784/2048
+  generated 800/2048
+  generated 816/2048
+  generated 832/2048
+  generated 848/2048
+  generated 864/2048
+  generated 880/2048
+  generated 896/2048
+  generated 912/2048
+  generated 928/2048
+  generated 944/2048
+  generated 960/2048
+  generated 976/2048
+  generated 992/2048
+  generated 1008/2048
+  generated 1024/2048
+  generated 1040/2048
+  generated 1056/2048
+  generated 1072/2048
+  generated 1088/2048
+  generated 1104/2048
+  generated 1120/2048
+  generated 1136/2048
+  generated 1152/2048
+  generated 1168/2048
+  generated 1184/2048
+  generated 1200/2048
+  generated 1216/2048
+  generated 1232/2048
+  generated 1248/2048
+  generated 1264/2048
+  generated 1280/2048
+  generated 1296/2048
+  generated 1312/2048
+  generated 1328/2048
+  generated 1344/2048
+  generated 1360/2048
+  generated 1376/2048
+  generated 1392/2048
+  generated 1408/2048
+  generated 1424/2048
+  generated 1440/2048
+  generated 1456/2048
+  generated 1472/2048
+  generated 1488/2048
+  generated 1504/2048
+  generated 1520/2048
+  generated 1536/2048
+  generated 1552/2048
+  generated 1568/2048
+  generated 1584/2048
+  generated 1600/2048
+  generated 1616/2048
+  generated 1632/2048
+  generated 1648/2048
+  generated 1664/2048
+  generated 1680/2048
+  generated 1696/2048
+  generated 1712/2048
+  generated 1728/2048
+  generated 1744/2048
+  generated 1760/2048
+  generated 1776/2048
+  generated 1792/2048
+  generated 1808/2048
+  generated 1824/2048
+  generated 1840/2048
+  generated 1856/2048
+  generated 1872/2048
+  generated 1888/2048
+  generated 1904/2048
+  generated 1920/2048
+  generated 1936/2048
+  generated 1952/2048
+  generated 1968/2048
+  generated 1984/2048
+  generated 2000/2048
+  generated 2016/2048
+  generated 2032/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\lora_r4\eval_samples
+17:05:29  END   gen:lora_r4 (exit 0)
+17:05:29  BEGIN gen:lora_r16_s1.0
+python.exe : 
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2.ps1:23 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:01,  4.69it/s]
+Loading pipeline components...:  50%|#####     | 3/6 [00:00<00:00,  4.39it/s]
+Loading pipeline components...:  67%|######6   | 4/6 [00:01<00:00,  3.46it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 2327.52it/s]
+
+Loading pipeline components...:  83%|########3 | 5/6 [00:01<00:00,  3.24it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  4.17it/s]
+model: LoRA rank 16 | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 16/2048
+  generated 32/2048
+  generated 48/2048
+  generated 64/2048
+  generated 80/2048
+  generated 96/2048
+  generated 112/2048
+  generated 128/2048
+  generated 144/2048
+  generated 160/2048
+  generated 176/2048
+  generated 192/2048
+  generated 208/2048
+  generated 224/2048
+  generated 240/2048
+  generated 256/2048
+  generated 272/2048
+  generated 288/2048
+  generated 304/2048
+22:50:52  END   gen:lora_r16_s1.0 (exit -1)
+22:50:52  BEGIN gen:lora_r16_s1.5
+22:52:18  =================== EVAL v2 RESUME (batch 8) ===================
+22:52:18  BEGIN gen:lora_r16_s1.5
+python.exe : 
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_resume.ps1:22 
+char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:00,  5.47it/s]
+Loading pipeline components...:  50%|#####     | 3/6 [00:00<00:00,  9.40it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 4415.89it/s]
+
+Loading pipeline components...:  67%|######6   | 4/6 [00:00<00:00,  8.91it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 11.99it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 10.46it/s]
+model: LoRA rank 16 @ scale 1.5 (128 layers) | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\lora_r16_s1.5\eval_samples
+23:32:50  END   gen:lora_r16_s1.5 (exit 0)
+23:32:50  BEGIN gen:full_ft
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_resume.ps1:22 
+char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:00,  6.50it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 4289.35it/s]
+
+Loading pipeline components...:  33%|###3      | 2/6 [00:00<00:00,  7.61it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:00<00:00, 10.44it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 11.39it/s]
+model: full-FT unet | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\full_ft\eval_samples
+00:10:26  END   gen:full_ft (exit 0)
+00:10:26  BEGIN gen:full_ft_matched
+python.exe : 
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_resume.ps1:22 
+char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:01,  4.54it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+
+Loading weights:  62%|######1   | 121/196 [00:00<00:00, 1139.27it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 1693.53it/s]
+
+Loading pipeline components...:  33%|###3      | 2/6 [00:00<00:00,  4.07it/s]
+Loading pipeline components...:  67%|######6   | 4/6 [00:00<00:00,  4.99it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00,  7.68it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00,  6.42it/s]
+model: full-FT unet | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+14:17:41  =================== EVAL v2 FINAL LEG (post-reboot) ===================
+14:17:41  BEGIN gen:full_ft_matched
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_final.ps1:16 
+char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  33%|###3      | 2/6 [00:00<00:00,  7.43it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 5294.00it/s]
+
+Loading pipeline components...:  83%|########3 | 5/6 [00:00<00:00, 11.41it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 11.88it/s]
+model: full-FT unet | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\full_ft_matched\eval_samples
+14:49:27  END   gen:full_ft_matched (exit 0)
+14:49:27  BEGIN gen:lora_r16_s1.0
+python.exe : 
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_final.ps1:16 
+char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  50%|#####     | 3/6 [00:00<00:00,  6.48it/s]
+Loading pipeline components...:  67%|######6   | 4/6 [00:00<00:00,  5.72it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:01<00:00,  4.13it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 2351.81it/s]
+
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  3.40it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:01<00:00,  4.06it/s]
+model: LoRA rank 16 | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\lora_r16_s1.0\eval_samples
+15:24:18  END   gen:lora_r16_s1.0 (exit 0)
+15:24:18  BEGIN eval:v2
+REFERENCE: 2800 real held-out paintings (from 2 folder(s))
+
+[floor] REAL vs REAL  (1400 vs 1400) ù a perfect model cannot beat this ...
+[floor] FID = 37.60
+
+computing reference Inception statistics once ...
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_final.ps1:16 
+char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 8396.03it/s]
+  base               N= 2048  FID  128.35  (+90.75 vs floor)  CLIP 32.72
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6984.63it/s]
+  lora_r4            N= 2048  FID  116.87  (+79.28 vs floor)  CLIP 32.67
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 16655.02it/s]
+  lora_r16_s1.0      N= 2048  FID  119.30  (+81.71 vs floor)  CLIP 32.89
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 5669.61it/s]
+  lora_r16_s1.5      N= 2048  FID  112.82  (+75.22 vs floor)  CLIP 32.93
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 6500.11it/s]
+  full_ft            N= 2048  FID  122.95  (+85.36 vs floor)  CLIP 32.78
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 5952.27it/s]
+  full_ft_matched    N= 2048  FID  121.48  (+83.88 vs floor)  CLIP 32.84
+
+saved -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\experiments\eval_v2_results.json
+
+FID minus floor is the honest number: how far the model sits ABOVE what real art scores.
+15:33:55  END   eval:v2 (exit 0)
+15:33:55  ======================= EVAL v2 ALL DONE =======================
+15:45:20  =================== EVAL v2 GAP LEG (r64 + dreambooth x2) ===================
+15:45:20  BEGIN gen:lora_r64
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_gap.ps1:29 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 10852.73it/s]
+
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:00,  6.64it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:00<00:00, 21.86it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 22.98it/s]
+model: LoRA rank 64 @ scale 1.5 (128 layers) | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\lora_r64\eval_samples
+16:18:08  END   gen:lora_r64 (exit 0)
+16:18:08  BEGIN gen:dreambooth
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_gap.ps1:29 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:00,  5.84it/s]
+Loading pipeline components...:  83%|########3 | 5/6 [00:00<00:00, 21.27it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 4018.32it/s]
+
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 14.80it/s]
+model: LoRA rank 16 @ scale 1.5 (128 layers) | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\dreambooth\eval_samples
+16:51:17  END   gen:dreambooth (exit 0)
+16:51:17  BEGIN gen:dreambooth_sks
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_gap.ps1:29 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]
+
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s][A
+Loading weights: 100%|##########| 196/196 [00:00<00:00, 10745.21it/s]
+
+Loading pipeline components...:  17%|#6        | 1/6 [00:00<00:00,  6.44it/s]
+Loading pipeline components...:  67%|######6   | 4/6 [00:00<00:00, 16.85it/s]
+Loading pipeline components...: 100%|##########| 6/6 [00:00<00:00, 20.65it/s]
+model: LoRA rank 16 @ scale 1.5 (128 layers) | generating 2048 images
+NEUTRAL prompt bank: 240 unique, zero style words. e.g. ['a river with tall trees', 'a river with tall trees at sunrise', 'a river with tall trees at sunset']
+TRIGGER suffix ', in sks style' -> e.g. 'a river with tall trees, in sks style'
+  generated 8/2048
+  generated 16/2048
+  generated 24/2048
+  generated 32/2048
+  generated 40/2048
+  generated 48/2048
+  generated 56/2048
+  generated 64/2048
+  generated 72/2048
+  generated 80/2048
+  generated 88/2048
+  generated 96/2048
+  generated 104/2048
+  generated 112/2048
+  generated 120/2048
+  generated 128/2048
+  generated 136/2048
+  generated 144/2048
+  generated 152/2048
+  generated 160/2048
+  generated 168/2048
+  generated 176/2048
+  generated 184/2048
+  generated 192/2048
+  generated 200/2048
+  generated 208/2048
+  generated 216/2048
+  generated 224/2048
+  generated 232/2048
+  generated 240/2048
+  generated 248/2048
+  generated 256/2048
+  generated 264/2048
+  generated 272/2048
+  generated 280/2048
+  generated 288/2048
+  generated 296/2048
+  generated 304/2048
+  generated 312/2048
+  generated 320/2048
+  generated 328/2048
+  generated 336/2048
+  generated 344/2048
+  generated 352/2048
+  generated 360/2048
+  generated 368/2048
+  generated 376/2048
+  generated 384/2048
+  generated 392/2048
+  generated 400/2048
+  generated 408/2048
+  generated 416/2048
+  generated 424/2048
+  generated 432/2048
+  generated 440/2048
+  generated 448/2048
+  generated 456/2048
+  generated 464/2048
+  generated 472/2048
+  generated 480/2048
+  generated 488/2048
+  generated 496/2048
+  generated 504/2048
+  generated 512/2048
+  generated 520/2048
+  generated 528/2048
+  generated 536/2048
+  generated 544/2048
+  generated 552/2048
+  generated 560/2048
+  generated 568/2048
+  generated 576/2048
+  generated 584/2048
+  generated 592/2048
+  generated 600/2048
+  generated 608/2048
+  generated 616/2048
+  generated 624/2048
+  generated 632/2048
+  generated 640/2048
+  generated 648/2048
+  generated 656/2048
+  generated 664/2048
+  generated 672/2048
+  generated 680/2048
+  generated 688/2048
+  generated 696/2048
+  generated 704/2048
+  generated 712/2048
+  generated 720/2048
+  generated 728/2048
+  generated 736/2048
+  generated 744/2048
+  generated 752/2048
+  generated 760/2048
+  generated 768/2048
+  generated 776/2048
+  generated 784/2048
+  generated 792/2048
+  generated 800/2048
+  generated 808/2048
+  generated 816/2048
+  generated 824/2048
+  generated 832/2048
+  generated 840/2048
+  generated 848/2048
+  generated 856/2048
+  generated 864/2048
+  generated 872/2048
+  generated 880/2048
+  generated 888/2048
+  generated 896/2048
+  generated 904/2048
+  generated 912/2048
+  generated 920/2048
+  generated 928/2048
+  generated 936/2048
+  generated 944/2048
+  generated 952/2048
+  generated 960/2048
+  generated 968/2048
+  generated 976/2048
+  generated 984/2048
+  generated 992/2048
+  generated 1000/2048
+  generated 1008/2048
+  generated 1016/2048
+  generated 1024/2048
+  generated 1032/2048
+  generated 1040/2048
+  generated 1048/2048
+  generated 1056/2048
+  generated 1064/2048
+  generated 1072/2048
+  generated 1080/2048
+  generated 1088/2048
+  generated 1096/2048
+  generated 1104/2048
+  generated 1112/2048
+  generated 1120/2048
+  generated 1128/2048
+  generated 1136/2048
+  generated 1144/2048
+  generated 1152/2048
+  generated 1160/2048
+  generated 1168/2048
+  generated 1176/2048
+  generated 1184/2048
+  generated 1192/2048
+  generated 1200/2048
+  generated 1208/2048
+  generated 1216/2048
+  generated 1224/2048
+  generated 1232/2048
+  generated 1240/2048
+  generated 1248/2048
+  generated 1256/2048
+  generated 1264/2048
+  generated 1272/2048
+  generated 1280/2048
+  generated 1288/2048
+  generated 1296/2048
+  generated 1304/2048
+  generated 1312/2048
+  generated 1320/2048
+  generated 1328/2048
+  generated 1336/2048
+  generated 1344/2048
+  generated 1352/2048
+  generated 1360/2048
+  generated 1368/2048
+  generated 1376/2048
+  generated 1384/2048
+  generated 1392/2048
+  generated 1400/2048
+  generated 1408/2048
+  generated 1416/2048
+  generated 1424/2048
+  generated 1432/2048
+  generated 1440/2048
+  generated 1448/2048
+  generated 1456/2048
+  generated 1464/2048
+  generated 1472/2048
+  generated 1480/2048
+  generated 1488/2048
+  generated 1496/2048
+  generated 1504/2048
+  generated 1512/2048
+  generated 1520/2048
+  generated 1528/2048
+  generated 1536/2048
+  generated 1544/2048
+  generated 1552/2048
+  generated 1560/2048
+  generated 1568/2048
+  generated 1576/2048
+  generated 1584/2048
+  generated 1592/2048
+  generated 1600/2048
+  generated 1608/2048
+  generated 1616/2048
+  generated 1624/2048
+  generated 1632/2048
+  generated 1640/2048
+  generated 1648/2048
+  generated 1656/2048
+  generated 1664/2048
+  generated 1672/2048
+  generated 1680/2048
+  generated 1688/2048
+  generated 1696/2048
+  generated 1704/2048
+  generated 1712/2048
+  generated 1720/2048
+  generated 1728/2048
+  generated 1736/2048
+  generated 1744/2048
+  generated 1752/2048
+  generated 1760/2048
+  generated 1768/2048
+  generated 1776/2048
+  generated 1784/2048
+  generated 1792/2048
+  generated 1800/2048
+  generated 1808/2048
+  generated 1816/2048
+  generated 1824/2048
+  generated 1832/2048
+  generated 1840/2048
+  generated 1848/2048
+  generated 1856/2048
+  generated 1864/2048
+  generated 1872/2048
+  generated 1880/2048
+  generated 1888/2048
+  generated 1896/2048
+  generated 1904/2048
+  generated 1912/2048
+  generated 1920/2048
+  generated 1928/2048
+  generated 1936/2048
+  generated 1944/2048
+  generated 1952/2048
+  generated 1960/2048
+  generated 1968/2048
+  generated 1976/2048
+  generated 1984/2048
+  generated 1992/2048
+  generated 2000/2048
+  generated 2008/2048
+  generated 2016/2048
+  generated 2024/2048
+  generated 2032/2048
+  generated 2040/2048
+  generated 2048/2048
+INFER_DONE 2048 images -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\outputs\phase2_eval_v2\dreambooth_sks\eval_samples
+17:26:10  END   gen:dreambooth_sks (exit 0)
+17:26:10  =================== GAP GENERATION DONE -> full 9-model eval ===================
+17:26:10  BEGIN eval:v2-full
+REFERENCE: 2800 real held-out paintings (from 2 folder(s))
+
+[floor] REAL vs REAL  (1400 vs 1400) � a perfect model cannot beat this ...
+[floor] FID = 37.60
+
+computing reference Inception statistics once ...
+python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+At C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\environment\run_eval_v2_gap.ps1:29 char:5
++     & $py -u @cmd 2>&1 | Out-File $log -Append -Encoding utf8
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 72124.99it/s]
+  base               N= 2048  FID  128.35  (+90.75 vs floor)  CLIP 32.72
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 46441.31it/s]
+  lora_r4            N= 2048  FID  116.87  (+79.28 vs floor)  CLIP 32.67
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 45401.79it/s]
+  lora_r16_s1.0      N= 2048  FID  119.30  (+81.71 vs floor)  CLIP 32.89
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 46652.87it/s]
+  lora_r16_s1.5      N= 2048  FID  112.82  (+75.22 vs floor)  CLIP 32.93
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 44922.85it/s]
+  lora_r64           N= 2048  FID  114.48  (+76.89 vs floor)  CLIP 33.10
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 39748.86it/s]
+  dreambooth         N= 2048  FID  119.65  (+82.05 vs floor)  CLIP 32.71
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 45701.34it/s]
+  dreambooth_sks     N= 2048  FID  119.66  (+82.07 vs floor)  CLIP 31.66
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 47823.67it/s]
+  full_ft            N= 2048  FID  122.95  (+85.36 vs floor)  CLIP 32.78
+
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]
+Loading weights: 100%|##########| 398/398 [00:00<00:00, 39762.12it/s]
+  full_ft_matched    N= 2048  FID  121.48  (+83.88 vs floor)  CLIP 32.84
+
+saved -> C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\experiments\eval_v2_results.json
+
+FID minus floor is the honest number: how far the model sits ABOVE what real art scores.
+17:34:04  END   eval:v2-full (exit 0)
+17:34:04  ======================= EVAL v2 COMPLETE (9 models) =======================

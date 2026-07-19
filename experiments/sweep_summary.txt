@@ -1,0 +1,32 @@
+﻿21:46:18  ===================== SWEEP START =====================
+21:46:18  BEGIN infer:base
+21:50:53  BEGIN eval:base
+FID = 167.43  (lower is better)
+CLIPScore = 33.48  (higher is better)
+21:51:11  BEGIN infer:lora_r16
+21:52:06  BEGIN eval:lora_r16
+FID = 317.32  (lower is better)
+CLIPScore = 28.73  (higher is better)
+21:52:20  BEGIN train:lora_r4
+22:53:37  BEGIN infer:lora_r4
+22:58:29  BEGIN eval:lora_r4
+FID = 159.20  (lower is better)
+CLIPScore = 33.37  (higher is better)
+22:58:47  BEGIN train:lora_r64
+23:59:52  BEGIN infer:lora_r64
+00:04:48  BEGIN eval:lora_r64
+FID = 166.00  (lower is better)
+CLIPScore = 32.84  (higher is better)
+00:05:06  BEGIN train:full_ft
+00:59:49  BEGIN infer:full_ft
+01:04:23  BEGIN eval:full_ft
+FID = 164.10  (lower is better)
+CLIPScore = 33.49  (higher is better)
+01:04:41  BEGIN train:dreambooth
+02:37:42  BEGIN infer:dreambooth
+02:42:33  BEGIN eval:dreambooth
+FID = 162.90  (lower is better)
+CLIPScore = 32.47  (higher is better)
+02:42:52  BEGIN train:p1_r01_lr2e3
+02:55:29  BEGIN train:p1b_impressionism
+02:56:04  ===================== SWEEP DONE =====================

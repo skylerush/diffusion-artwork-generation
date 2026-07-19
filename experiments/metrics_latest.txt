@@ -1,0 +1,72 @@
+A note on "accuracy" / "val AUC": those are CLASSIFICATION metrics — they need a right
+answer to compare against. Generative models invent images, so neither exists here by construction.
+What we report instead: training loss (1-loss = "% of noise variance explained"), FID vs the
+real-vs-real floor, and CLIP score (prompt adherence). Details in each table below.
+
+==============================================================================
+PHASE 1 — from-scratch DDPM training runs  (source: TensorBoard logs)
+==============================================================================
+  run                  last step   first    final      min  noise expl.   note
+  ------------------------------------------------------------------------------------------------
+  p1_r01_lr2e3              1950   1.130   0.9947   0.9745         0.5%   DELIBERATE FAILURE: lr 10x too high
+  p1a_butterflies           8600   1.134   0.0107   0.0107        98.9%   main sanity run — EMA bug found & fixed here
+  p1a_speedcheck             175   1.134   0.0477   0.0410        95.2%   throughput probe (200→500 img/s experiment)
+  p1b_impressionism         7950   1.134   0.0331   0.0277        96.7%   on-theme: learns palette/texture, not scenes
+  run                         25   1.092   0.5910   0.5910        40.9%   smoke test (16px, fake data)
+
+  'noise expl.' = (1 - final MSE)x100 — the honest analogue of accuracy for a diffusion
+  model (predicting ε with variance 1.0). There is NO val-AUC for generative models.
+
+==============================================================================
+PHASE 2 — evaluation v1  (256 imgs/model vs 300 refs — LATER SHOWN UNRELIABLE)
+==============================================================================
+  model             FID ↓   CLIP ↑  trainable   note
+  ------------------------------------------------------------------
+  base             167.43    33.48          0   
+  lora_r4          159.20    33.37       0.8M   
+  lora_r16         164.07    33.15       3.2M   corrected re-infer (D4)
+  lora_r64         166.00    32.84      12.8M   
+  full_ft          164.10    33.49       860M   
+  dreambooth       162.90    32.47       3.2M   
+
+  ⚠ v1 verdict: REAL paintings score FID 156.7 vs OTHER real paintings at this sample
+  size — every model above sits within ~10 points of that floor, so v1 FID could not
+  distinguish the methods. That discovery motivated evaluation v2 (below).
+
+==============================================================================
+PHASE 2 — evaluation v2  (2048 imgs/model, ~2800 refs, neutral prompts, tuned scale)
+==============================================================================
+  reference: 2800 real paintings   |   REAL-vs-REAL floor at this N: FID 37.60
+
+  model                  N    FID ↓  vs floor   CLIP ↑
+  ------------------------------------------------------
+  base                2048   128.35    +90.75    32.72
+  lora_r4             2048   116.87    +79.28    32.67
+  lora_r16_s1.0       2048   119.30    +81.71    32.89
+  lora_r16_s1.5       2048   112.82    +75.22    32.93
+  lora_r64            2048   114.48    +76.89    33.10
+  dreambooth          2048   119.65    +82.05    32.71
+  dreambooth_sks      2048   119.66    +82.07    31.66
+  full_ft             2048   122.95    +85.36    32.78
+  full_ft_matched     2048   121.48    +83.88    32.84
+
+  'vs floor' is the honest number: distance ABOVE what real art scores against
+  real art. ~0 would mean statistically indistinguishable from real Impressionism.
+
+==============================================================================
+MODEL ZOO — every trained checkpoint on disk
+==============================================================================
+  model                           size   path
+  ------------------------------------------------------------------------------------
+  dreambooth (LoRA)             12.8MB   outputs\phase2\dreambooth\ckpt\lora_last.pt
+  lora_r16 (LoRA)               12.8MB   outputs\phase2\lora_r16\ckpt\lora_last.pt
+  lora_r4 (LoRA)                 3.3MB   outputs\phase2\lora_r4\ckpt\lora_last.pt
+  lora_r64 (LoRA)               51.1MB   outputs\phase2\lora_r64\ckpt\lora_last.pt
+  full_ft (full UNet)           3.44GB   outputs\phase2\full_ft\ckpt\unet_last
+  full_ft_matched (full UNet)    3.44GB   outputs\phase2\full_ft_matched\ckpt\unet_last
+  p1_r01_lr2e3 (scratch)       572.3MB   outputs\phase1\p1_r01_lr2e3\ckpt\last.pt
+  p1a_butterflies (scratch)    572.3MB   outputs\phase1\p1a_butterflies\ckpt\last.pt
+  p1a_speedcheck (scratch)     572.3MB   outputs\phase1\p1a_speedcheck\ckpt\last.pt
+  p1b_impressionism (scratch)   572.3MB   outputs\phase1\p1b_impressionism\ckpt\last.pt
+  run (scratch)                 11.4MB   outputs\phase1\run\ckpt\last.pt
+

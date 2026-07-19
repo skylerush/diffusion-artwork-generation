@@ -1,0 +1,18 @@
+loading SD-1.5 components ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/196 [00:00<?, ?it/s]Loading weights: 100%|##########| 196/196 [00:00<00:00, 4922.24it/s]
+C:\Users\sagiz\Desktop\Shenkar\neural networks\diffusion-artwork-generation\.venv\Lib\site-packages\huggingface_hub\utils\_validators.py:205: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+  train: 300 images -> encoding latents once
+  val: 300 images -> encoding latents once
+
+[base] loading ...
+[base]  train 0.18905   val 0.18802   gap -0.00103
+
+[lora_r4] loading ...
+[lora_r4]  train 0.18883   val 0.18784   gap -0.00098
+
+[lora_r16] loading ...
+[lora_r16]  train 0.18874   val 0.18778   gap -0.00096
+
+[lora_r64] loading ...

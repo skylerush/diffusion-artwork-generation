@@ -83,6 +83,12 @@ Print every metric in the project, read from the committed logs and result files
 
 The working tree is about 20 GB, most of it model checkpoints, the dataset, and 18,432 evaluation
 images. Those are left out here since they can all be regenerated — `prepare_data.py` rebuilds the
-dataset and the training scripts rebuild the weights. The LoRA adapters are small enough to include,
-so `generate.py` works straight after a clone. Sample grids, figures, logs, TensorBoard scalars and
-per-run configs are all committed, so every artifact the write-ups cite resolves.
+dataset and the training scripts rebuild the weights. Sample grids, figures, logs, TensorBoard
+scalars and per-run configs are all committed, so every artifact the write-ups cite resolves.
+
+All four LoRA adapters are in the repository, so `generate.py` works straight after a clone for
+every adapter-based model. The three from-scratch Phase-1 checkpoints are attached to the
+[v1.0 release](../../releases/tag/v1.0), since at 546 MB each they are too large for git. The two
+full fine-tuned UNets are not published: they are 3.3 GB each, above GitHub's release asset limit,
+and they are the models that lost the comparison — a 12.8 MB adapter scores 8.7 FID better.
+`train_full.py` reproduces them in about two hours if needed.

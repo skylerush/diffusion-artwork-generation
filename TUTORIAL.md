@@ -51,8 +51,8 @@ The first SD load takes ~20 s (weights are already cached); each 512px image tak
 | `lora_r4` | Tiny LoRA (rank 4) — nearly as good | 3.3 MB | `outputs/phase2/lora_r4/ckpt/lora_last.pt` |
 | `lora_r64` | Big LoRA — *drifts* compositions | 51 MB | `outputs/phase2/lora_r64/ckpt/lora_last.pt` |
 | `dreambooth` | LoRA trained with the `sks` style token + prior preservation | 12.8 MB | `outputs/phase2/dreambooth/ckpt/lora_last.pt` |
-| `full_ft` | **All 860 M UNet params** fine-tuned | 3.44 GB | `outputs/phase2/full_ft/ckpt/unet_last/` |
-| `full_ft_matched` | Full FT, images-seen matched to LoRA (eval-v2 fairness) | 3.44 GB | `outputs/phase2/full_ft_matched/ckpt/unet_last/` |
+| `full_ft` | **All 860 M UNet params** fine-tuned | 3.44 GB | `outputs/phase2/full_ft/ckpt/unet_last/` † |
+| `full_ft_matched` | Full FT, images-seen matched to LoRA (eval-v2 fairness) | 3.44 GB | `outputs/phase2/full_ft_matched/ckpt/unet_last/` † |
 | `base` | Plain SD-1.5, no fine-tune (for comparison) | — | HF cache (`~/.cache/huggingface/`, ~4 GB) |
 
 **Phase-1 (from-scratch DDPM, 64px — our own U-Net, no diffusers):**
@@ -64,7 +64,13 @@ The first SD load takes ~20 s (weights are already cached); each 512px image tak
 | `outputs/phase1/p1_r01_lr2e3/ckpt/last.pt` | noise — the deliberate lr-failure (educational!) | 572 MB |
 
 > A **LoRA is a patch, not a model**: 12.8 MB of low-rank matrices bolted onto the frozen 4 GB base
-> at load time. That's the project's headline finding — it matches the 3.44 GB full fine-tune.
+> at load time. That's the project's headline finding — on the corrected evaluation it *beats* the
+> 3.44 GB full fine-tune by 8.7 FID.
+
+**If you cloned this from GitHub**, the four LoRA adapters are already present and work immediately.
+The three Phase-1 checkpoints are attached to the [v1.0 release](../../releases/tag/v1.0) — download
+one and pass it to `sample.py --ckpt`. The two rows marked † (the full fine-tuned UNets, 3.3 GB
+each) are not published; rebuild them with `train_full.py` if you need them.
 
 ---
 

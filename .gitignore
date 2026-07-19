@@ -36,6 +36,8 @@ data/
 *.bin
 !outputs/phase2/lora_r16/ckpt/lora_last.pt
 !outputs/phase2/lora_r4/ckpt/lora_last.pt
+!outputs/phase2/lora_r64/ckpt/lora_last.pt
+!outputs/phase2/dreambooth/ckpt/lora_last.pt
 outputs/phase2/*/ckpt/unet_last/
 
 # ---- Bulk generated images --------------------------------------------------

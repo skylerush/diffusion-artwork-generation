@@ -7,7 +7,7 @@ size: 16:9
 
 # Diffusion Models for Impressionist Artwork Generation
 ### Neural Networks — Final Project
-*Sagie Zaoui · Shenkar*
+*Sagie Zaoui · Amit Sachs · Shenkar*
 
 <!-- Render: `marp slides/slides.md --pdf` (or --pptx). Figures filled from outputs/. -->
 

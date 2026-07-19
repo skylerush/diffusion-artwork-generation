@@ -1,6 +1,6 @@
 # Diffusion Models for Impressionist Artwork Generation
 
-Sagie Zaoui — Shenkar College, Neural Networks final project.
+Sagie Zaoui and Amit Sachs — Shenkar College, Neural Networks final project.
 
 The project has two parts. The first implements a DDPM from scratch in PyTorch — U-Net noise
 predictor, cosine β-schedule, ε-prediction, EMA, and both the ancestral DDPM and DDIM samplers —

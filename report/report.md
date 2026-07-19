@@ -1,5 +1,6 @@
 # Diffusion Models for Impressionist Artwork Generation
 ### Neural Networks — Final Project Report
+**Sagie Zaoui · Amit Sachs** — Shenkar College
 
 > Status: **complete.** Every metric here came from an actual logged run (`experiments/RESULTS.md`,
 > `experiments/sweep.log`); figures are in `report/figures/` and `outputs/`.
